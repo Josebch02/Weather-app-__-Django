@@ -1,0 +1,34 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'weather_app/main.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap" rel="stylesheet">
+    <link rel="icon" href="{% static 'weather_app/weather.png' %}" type="image/png">
+    <title>Weather App</title>
+    {% load static %}
+</head>
+<body>
+    <style>
+        body {
+            background-image: url('{% static "weather_app/background.jpg" %}');
+        }
+    </style>
+    <div class="container">
+        <div class="logo">
+            <img src="{% static 'weather_app/cloudy.png' %}" alt="Weather Logo">
+            <p>Weather</p>
+        </div>
+        <form method="POST">
+            {% csrf_token %}
+            <label for="city">City Name:</label>
+            <input type="text" id="city" name="city" required>
+            <button type="submit">Get Weather</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'weather_app/main2.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap" rel="stylesheet">
+    <link rel="icon" href="{% static 'weather_app/weather.png' %}" type="image/png">
+
+    <title>Weather at Fingertips</title>
+    {% load static %}
+</head>
+<body>
+    <style>
+        body {
+            background-image: url('{% static "weather_app/background2.jpg" %}');
+        }
+    </style>
+    <header>
+        <a href="{{index.html}}" class="button-return">Return</a>
+    </header>
+    <div class="weather-container">
+        <div class="weather-card">
+            <h1>{{ city }}</h1>
+            <h3>Today's Weather: {{ main }}</h3>
+            <div class="temperature">
+                <p class="feels-like">Feels like: {{ feels }} °C</p>
+                <p class="current-temp">{{ temp }} °C</p>
+            </div>
+            <div class="minmaxContainer">
+                <div class="min">
+                    <p class="minHeading">Min</p>
+                    <p class="minTemp">{{ temp_min }}°C</p>
+                </div>
+                <div class="max">
+                    <p class="maxHeading">Max</p>
+                    <p class="maxTemp">{{ temp_max }}°C</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
